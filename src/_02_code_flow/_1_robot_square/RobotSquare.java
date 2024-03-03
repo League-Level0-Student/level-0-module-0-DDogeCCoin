@@ -17,7 +17,7 @@ public class RobotSquare {
 
 
 int count = 0;
-while (count < 4); {
+while (count < 4) {
 	rob.penDown();
 	rob.setSpeed(100);
 	rob.move(200);
