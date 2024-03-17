@@ -18,7 +18,7 @@ public class AwesomeOrNot {
 		// 3. Print your variable to the console
 		System.out.println(thing1);
 		// 4. Get the user to enter something that they think is awesome
-		JOptionPane.showInputDialog(null,"Type something Awesome!!");
+		String.JOptionPane.showInputDialog(null,"Type something Awesome!!");
 		// 5. If your variable is  0
 		 if(thing1 == 0) { JOptionPane.showMessageDialog(null,"Thats Awesome!");
 		// -- tell the user whatever they entered is awesome!
