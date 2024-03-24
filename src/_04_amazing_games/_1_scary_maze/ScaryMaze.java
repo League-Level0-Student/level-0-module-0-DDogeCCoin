@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
-	
+
 	//private static final String  && mouse = null;
 
 	/***********  SOUND ***************
@@ -26,30 +26,30 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 	 * If you are not sure, ask your teacher 
 	 * *****************/
 	boolean canPlaySounds = true;
-	
+
 	boolean started = false;
 	BufferedImage maze;
 	final int frameWidth = 500;
 	final int frameHeight = 500;
 
 	ScaryMaze() throws Exception {
-		
+
 		//1. Use this online tool (https://www.pixilart.com/) to make a maze image. Size = 500x500
 		//   The maze must be drawn using 4 different colors, one each for: START, END, BACKGROUND, and path.
 		//   Download your maze image to the computer desktop. 
 		//   Drag and drop the image into the _04_amazing_games._1_scary_maze package 
-		
-		
+
+
 		//2. Change the line of code below so that it uses YOUR maze's file name
 		maze = ImageIO.read(getClass().getResource("pixilart-drawing.png"));
-		
-		
+
+
 		//3. Run the program. Do you see your maze? Don't continue until you do.
-		
-		
+
+
 		// Leave this code here! It will allow the program to know when the mouse moves. 
 		addMouseMotionListener(this);
-		
+
 	}
 
 	@Override
@@ -57,77 +57,79 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		int mouseX = e.getX();
 		int mouseY = e.getY();
 		int mouseColor = maze.getRGB(mouseX, mouseY);	
-		
+
 		//4. Print the mouseColor variable (Hint: use syso)
 		System.out.println(mouseColor);
 		//5.  Run your program and move your mouse over the START COLOR. A number will be printed to the console
-		
-		
+
+
 		int startColor=-14503604;
 		//6. Change the value of this startColor variable to the number printed in the previous step. 
-		
-		
+
+
 		// Leave this code here!
 		// It makes sure the game will not start until the mouse has visited the start area.
 		if (!started  && mouseColor==startColor) {
 			started = true;
 		}
-		
-		
+
+
 		//7. Make a new int variable for the background color of the maze
 		int backroundcolor =-16777216;
-		
+
 		//8. Run the program and move the mouse over the BACKGROUND COLOR. 
 		//   Use the number that is printed to the console to set the background color variable 
 
 		int endcolor =-1237980;
-		
+
 		if (started) {
-		
-		
+
+
 			//9. If the mouse falls off the path (which means it is on the background color)
 			//		call the scare method - scare();
 			if (mouseColor==backroundcolor) {
-			scare();
+				scare();
 			}
-		
+
 			//13.  If the mouse is on the end color, pop up a message to tell them they won!
 			//    (you will need to get the number of the END COLOR by moving the mouse over it)
 			if (mouseColor==endcolor) {
-					
+
 			}	
 		}	
 	}
 
 	private void scare() {
-		
+
 		//Scare your player with scary messages, sounds and pictures
-		
+
 		System.out.println("BOO!");
-		
+
 		if (canPlaySounds) {
 
 			/**********  PLAY A SOUND ***************/
 			//10. Find a scary sound and put it in the _04_amazing_games._1_scary_maze package (where you put your maze picture). 
 			//    You can find a sound on freesound.org. Log in as leagueofamazing/code4life.
 			showScaryImage("download.jpeg");
+
+
 			playScarySound("1.wav");
 			//11. Play the scary sound. Hint: use the playScarySound method with the name of your sound file		
 
-			
+
 		}	
 		/**********  SHOW A PICTURE ***************/
 
 		//12. Find a scary image and drop it into the _04_amazing_games._1_scary_maze package. 
 		//    Use the showScaryImage method below and send it the name of your picture file
-		
-		
-	}
-	
 
-	
+
+	}
+
+
+
 	/**********  DO NOT CHANGE THE CODE BELOW THIS LINE ***************/
-	
+
 	private void playScarySound(String soundName) {
 		File sound = new File("src/_04_amazing_games/_1_scary_maze/"+soundName);
 		if (sound.exists()) {
@@ -140,7 +142,7 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 			catch (Exception e) {
 				System.out.println("Could not play this sound");
 			}
- 		}
+		}
 		else {
 			System.out.println("File does not exist");
 		}
