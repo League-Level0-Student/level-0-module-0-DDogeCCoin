@@ -23,7 +23,7 @@ public class QuizGame {
 		// MAKE MORE QUESTIONS. Ask more questions by repeating the above 
 		// Option: Subtract a point from their score for a wrong answer
 		String input11 = JOptionPane.showInputDialog(null,"what are the first 6 digits of Pi? (add the decimal)");
-		if (input11.equals (3.14159))
+		if (input11.equals ("3.14159"))
 		{ JOptionPane.showMessageDialog(null,"Correct. +50 points");
 		score +=50;
 		}
